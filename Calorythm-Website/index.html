@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorythm | Evidence-Based Nutrition & Diet Plans</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --sage-green: #7BAE7F;
+            --white: #FFFFFF;
+            --cream: #F8F6F2;
+            --dark-charcoal: #2D2D2D;
+            --accent-orange: #F4A261;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--dark-charcoal);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn-sage {
+            background-color: var(--sage-green);
+            color: var(--white);
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-sage:hover {
+            background-color: #69966d;
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .nav-link {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--sage-green) !important;
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+        }
+
+        /* CRITICAL: Sections change visually without breaking layouts */
+        .page-section {
+            display: none;
+            width: 100%;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .page-section.active-section {
+            display: block !important;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" onclick="showSection('home', this)" style="color: var(--sage-green); cursor: pointer;">Calorythm</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li class="nav-item"><a class="nav-link active" onclick="showSection('home', this)">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showSection('about', this)">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showSection('services', this)">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showSection('blog', this)">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showSection('contact', this)">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow-1 d-flex align-items-center">
+
+        <section id="home" class="page-section active-section py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h1 class="display-4 fw-bold mb-3" style="color: var(--dark-charcoal);">
+                            Evidence-Based Nutrition for a <span style="color: var(--sage-green);">Healthier You</span>
+                        </h1>
+                        <p class="lead text-muted mb-4">
+                            Welcome to Calorythm. Get customized, science-backed diet and nutrition plans tailored just for your body, health goals, and lifestyle.
+                        </p>
+                        <a onclick="showSection('contact', document.querySelector('[onclick*=\'contact\']'))" class="btn btn-sage btn-lg px-4 py-2 fw-bold shadow-sm" style="cursor: pointer;">Book a Consultation</a>
+                    </div>
+                    <div class="col-md-6 text-center mt-4 mt-md-0">
+                        <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded-4 shadow" alt="Calorythm Nutrition">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="page-section py-5 bg-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center mb-4 mb-md-0">
+                        <img src="https://images.unsplash.com/photo-1594824813573-246434e3b96f?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-4 shadow" alt="Our Dietitian">
+                    </div>
+                    <div class="col-md-7">
+                        <h2 class="fw-bold mb-3" style="color: var(--dark-charcoal);">About <span style="color: var(--sage-green);">Calorythm</span></h2>
+                        <h5 class="text-muted mb-3 fw-semibold">Our Story, Mission & Vision</h5>
+                        <p class="text-secondary">
+                            At Calorythm, we believe that nutrition shouldn't be about strict restrictions or complex calculations. Our mission is to simplify health by providing personalized, evidence-based nutrition advice that seamlessly fits into your unique lifestyle.
+                        </p>
+                        <p class="text-secondary mb-4">
+                            Whether you are managing a medical condition or striving for peak physical performance, our certified professionals are here to guide you with science-backed meal plans and continuous support.
+                        </p>
+                        <div class="row text-start g-3 fw-semibold text-secondary">
+                            <div class="col-sm-6"><span style="color: var(--sage-green);">✔</span> Certified Clinical Dietitians</div>
+                            <div class="col-sm-6"><span style="color: var(--sage-green);">✔</span> Evidence-Based Approaches</div>
+                            <div class="col-sm-6"><span style="color: var(--sage-green);">✔</span> 1-on-1 Online Consultations</div>
+                            <div class="col-sm-6"><span style="color: var(--sage-green);">✔</span> Customized Meal Planning</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="page-section py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold" style="color: var(--dark-charcoal);">Our Featured <span style="color: var(--sage-green);">Services</span></h2>
+                    <p class="text-muted">Tailored nutrition programs designed to help you achieve long-term wellness.</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm p-4 bg-white rounded-4">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold mb-3" style="color: var(--dark-charcoal);">Weight Management</h5>
+                                <p class="card-text text-muted">Sustainable weight loss and weight gain programs focused on building healthy habits without starving.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm p-4 bg-white rounded-4">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold mb-3" style="color: var(--dark-charcoal);">PCOS Nutrition</h5>
+                                <p class="card-text text-muted">Specialized lifestyle and diet interventions to balance hormones, improve insulin sensitivity, and manage PCOS.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm p-4 bg-white rounded-4">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold mb-3" style="color: var(--dark-charcoal);">Diabetes Management</h5>
+                                <p class="card-text text-muted">Evidence-based meal planning to control blood sugar levels, manage insulin, and prevent future complications.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm p-4 bg-white rounded-4">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold mb-3" style="color: var(--dark-charcoal);">Pregnancy & Child Nutrition</h5>
+                                <p class="card-text text-muted">Ensuring optimal health for mother and baby with nutrient-dense plans during pregnancy and childhood growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm p-4 bg-white rounded-4">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold mb-3" style="color: var(--dark-charcoal);">Sports & Corporate Wellness</h5>
+                                <p class="card-text text-muted">Fueling athletes for peak performance and designing custom health workshops for employee wellness.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm p-4 bg-white rounded-4">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold mb-3" style="color: var(--sage-green);">Customized Meal Plans</h5>
+                                <p class="card-text text-muted">1-on-1 digital consultations from the comfort of your home, complete with weekly grocery lists.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="page-section py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold" style="color: var(--dark-charcoal);">Latest From Our <span style="color: var(--sage-green);">Blog</span></h2>
+                    <p class="text-muted">Evidence-based health tips, myths vs facts, and delicious healthy recipes.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 bg-light">
+                            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Healthy Meal Planning">
+                            <div class="card-body p-4">
+                                <span class="badge mb-2" style="background-color: var(--accent-orange);">Meal Planning</span>
+                                <h5 class="card-title fw-bold">5 Simple Steps to Master Weekly Meal Planning</h5>
+                                <p class="text-muted small">Learn how to plan your meals efficiently, save money, and maintain your nutrition goals easily.</p>
+                                <a href="#" class="text-decoration-none fw-semibold" style="color: var(--sage-green);">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 bg-light">
+                            <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Nutrition Myths">
+                            <div class="card-body p-4">
+                                <span class="badge mb-2" style="background-color: var(--accent-orange);">Myths vs Facts</span>
+                                <h5 class="card-title fw-bold">Carbs are Bad for You? Diet Myths Exploded!</h5>
+                                <p class="text-muted small">We look at the science behind carbohydrates and why you shouldn't completely eliminate them.</p>
+                                <a href="#" class="text-decoration-none fw-semibold" style="color: var(--sage-green);">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-4 bg-light">
+                            <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Healthy Recipes">
+                            <div class="card-body p-4">
+                                <span class="badge mb-2" style="background-color: var(--accent-orange);">Recipes</span>
+                                <h5 class="card-title fw-bold">Quick & High-Protein Breakfast Smoothies</h5>
+                                <p class="text-muted small">Boost your morning energy with these fast, delicious, and dietitian-approved smoothie recipes.</p>
+                                <a href="#" class="text-decoration-none fw-semibold" style="color: var(--sage-green);">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page-section py-5">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-md-5">
+                        <h2 class="fw-bold mb-3" style="color: var(--dark-charcoal);">Get In <span style="color: var(--sage-green);">Touch</span></h2>
+                        <p class="text-muted mb-4">Have questions or want to book an offline consultation? Reach out to Calorythm directly.</p>
+                        
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="p-3 rounded-3 bg-white text-success shadow-sm me-3">📍</div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Clinic Address</h6>
+                                <p class="text-muted mb-0 small">Faisalabad, Punjab, Pakistan</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="p-3 rounded-3 bg-white text-success shadow-sm me-3">✉</div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Email Address</h6>
+                                <p class="text-muted mb-0 small">info@calorythm.com</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="p-3 rounded-3 bg-white text-success shadow-sm me-3">📞</div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Phone Number</h6>
+                                <p class="text-muted mb-0 small">+92 300 1234567</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-7">
+                        <div class="p-4 p-md-5 rounded-4 shadow-sm bg-white">
+                            <h4 class="fw-bold mb-3" style="color: var(--dark-charcoal);">Book a Consultation</h4>
+                            <form id="whatsappForm">
+                                <div class="mb-3">
+                                    <label class="form-label small fw-semibold">Your Full Name</label>
+                                    <input type="text" id="clientName" class="form-control bg-light border-0 py-2" 
+                                           placeholder="Enter your name (letters only)" 
+                                           oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '')" 
+                                           required>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-semibold">Select Service</label>
+                                        <select id="selectedService" class="form-select bg-light border-0 py-2" required>
+                                            <option value="" disabled selected>Choose a program...</option>
+                                            <option value="Weight Management">Weight Management</option>
+                                            <option value="PCOS Nutrition">PCOS Nutrition</option>
+                                            <option value="Diabetes Management">Diabetes Management</option>
+                                            <option value="Pregnancy & Child Nutrition">Pregnancy & Child Nutrition</option>
+                                            <option value="Customized Meal Plan">Customized Meal Plan</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-semibold">Preferred Date</label>
+                                        <input type="date" id="bookingDate" class="form-control bg-light border-0 py-2" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-sage w-100 fw-bold py-2 shadow-sm mt-2">
+                                    Book Appointment via WhatsApp
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-4 text-center bg-white border-top mt-auto">
+        <div class="container">
+            <p class="mb-2 fw-bold" style="color: var(--sage-green);">Calorythm &copy; 2026</p>
+            <p class="text-muted small px-md-5 mb-3" style="font-size: 0.8rem;">
+                <strong>Disclaimer:</strong> The content on this website is for educational and informational purposes only and is not intended as a substitute for professional medical advice, diagnosis, or treatment.
+            </p>
+            <div class="small text-muted">
+                <a href="#" class="text-decoration-none text-muted me-3">Privacy Policy</a> | 
+                <a href="#" class="text-decoration-none text-muted ms-3">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function showSection(sectionId, element) {
+            // Hide all sections instantly
+            let sections = document.querySelectorAll('.page-section');
+            sections.forEach(function(section) {
+                section.classList.remove('active-section');
+            });
+            
+            // Show only the requested section
+            let targetSection = document.getElementById(sectionId);
+            if(targetSection) {
+                targetSection.classList.add('active-section');
+            }
+            
+            // Update active styling in menu items
+            let navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(function(link) {
+                link.classList.remove('active');
+            });
+            if(element) {
+                element.classList.add('active');
+            }
+
+            // Close mobile menu smoothly on mobile views
+            let navbarCollapse = document.getElementById('navbarNav');
+            if(navbarCollapse && navbarCollapse.classList.contains('show')) {
+                let bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                if(bsCollapse) { bsCollapse.hide(); }
+            }
+        }
+
+        // WhatsApp trigger integration
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let name = document.getElementById('clientName').value;
+            let service = document.getElementById('selectedService').value;
+            let date = document.getElementById('bookingDate').value;
+            let phoneNumber = "923001234567"; 
+            let message = `Hello Calorythm! I would like to book a consultation.%0A%0A*Name:* ${name}%0A*Service Required:* ${service}%0A*Preferred Date:* ${date}`;
+            window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`, '_blank');
+        });
+    </script>
+</body>
+</html>
