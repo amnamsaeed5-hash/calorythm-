@@ -34,8 +34,7 @@ The purpose of Calorythm is to provide a simple and attractive web interface rel
 ![Calorythm Home Page](./Home.png)
 
 ### 📖 About Us
-![Calorythm About Us](./About-Us.png)
-
+![Calorythm About Us](./About%20Us.png)
 ### 📝 Blog
 ![Calorythm Blog](./Blog.png)
 
