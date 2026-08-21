@@ -28,3 +28,16 @@ The purpose of Calorythm is to provide a simple and attractive web interface rel
 ## 👩‍💻 Developed By
 
 **Amna Saeed**
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Calorythm Home Page](home.png)
+
+### 📖 About Us
+![Calorythm About Us](about.png)
+
+### 📝 Blog
+![Calorythm Blog](blog.png)
+
+### 📩 Contact
+![Calorythm Contact](contact.png)
