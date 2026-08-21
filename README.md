@@ -31,13 +31,13 @@ The purpose of Calorythm is to provide a simple and attractive web interface rel
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Calorythm Home Page](home.png)
+![Calorythm Home Page](./Home.png)
 
 ### 📖 About Us
-![Calorythm About Us](about.png)
+![Calorythm About Us](./About-Us.png)
 
 ### 📝 Blog
-![Calorythm Blog](blog.png)
+![Calorythm Blog](./Blog.png)
 
-### 📩 Contact
-![Calorythm Contact](contact.png)
+### 📞 Contact
+![Calorythm Contact](./Contact.png)
